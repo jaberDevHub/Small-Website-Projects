@@ -1,6 +1,7 @@
 // Global variables
 let cart = [];
 let products = [];
+let currentCategory = 'All';
 
 // DOM elements
 const hamburger = document.querySelector('.hamburger');
@@ -15,51 +16,8 @@ const checkoutBtn = document.getElementById('checkout');
 const contactForm = document.getElementById('contact-form');
 const productGrid = document.getElementById('product-grid');
 
-// Sample products data
-const sampleProducts = [
-    {
-        id: 1,
-        name: "Black Hoodie Premium",
-        price: 89.99,
-        image: "Black Hoodie",
-        description: "Premium quality black hoodie with minimalist design"
-    },
-    {
-        id: 2,
-        name: "Minimal T-Shirt",
-        price: 39.99,
-        image: "White T-Shirt",
-        description: "Clean and simple white t-shirt for everyday wear"
-    },
-    {
-        id: 3,
-        name: "Urban Jacket",
-        price: 149.99,
-        image: "Urban Jacket",
-        description: "Stylish urban jacket perfect for street fashion"
-    },
-    {
-        id: 4,
-        name: "Classic Jeans",
-        price: 79.99,
-        image: "Black Jeans",
-        description: "Comfortable black jeans with perfect fit"
-    },
-    {
-        id: 5,
-        name: "Streetwear Cap",
-        price: 29.99,
-        image: "Black Cap",
-        description: "Minimalist cap with BLACK BANNER logo"
-    },
-    {
-        id: 6,
-        name: "Premium Sneakers",
-        price: 199.99,
-        image: "Black Sneakers",
-        description: "High-quality sneakers for urban lifestyle"
-    }
-];
+// Categories will be populated from products.json
+let categories = [];
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
@@ -87,9 +45,68 @@ function initializeApp() {
 }
 
 // Product Management
-function loadProducts() {
-    products = sampleProducts;
-    renderProducts();
+function getRandomPrice(min, max) {
+    return Math.round((Math.random() * (max - min) + min) * 100) / 100;
+}
+
+async function loadProducts() {
+    showLoadingIndicator();
+    try {
+        const response = await fetch('products.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        products = data.categories.flatMap(category => 
+            category.products.map(product => ({
+                ...product,
+                category: category.name
+            }))
+        );
+
+        categories = [...new Set(products.map(p => p.category))];
+
+        hideLoadingIndicator();
+        renderCategoryFilters();
+        renderProducts();
+        showNotification(`Successfully loaded ${products.length} products from ${categories.length} categories!`);
+    } catch (error) {
+        console.error('Failed to load products:', error);
+        hideLoadingIndicator();
+        // Display a more user-friendly error message on the page
+        const productGrid = document.getElementById('product-grid');
+        if (productGrid) {
+            productGrid.innerHTML = `<p class="error-message">Failed to load products. Please try again later.</p>`;
+        }
+        showNotification('Error: Could not load products.', 'error');
+    }
+}
+
+function renderCategoryFilters() {
+    const container = document.querySelector('#products .container');
+    if (!container) return;
+
+    let filterBar = document.getElementById('category-filters');
+    if (!filterBar) {
+        filterBar = document.createElement('div');
+        filterBar.id = 'category-filters';
+        filterBar.className = 'category-filters';
+        container.insertBefore(filterBar, productGrid);
+    }
+
+    const allCats = ['All', ...categories];
+    filterBar.innerHTML = allCats.map(cat => `
+        <button class="category-btn${currentCategory === cat ? ' active' : ''}" data-category="${cat}">${cat}</button>
+    `).join('');
+
+    filterBar.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            currentCategory = e.target.getAttribute('data-category');
+            renderCategoryFilters();
+            renderProducts();
+        });
+    });
 }
 
 function renderProducts() {
@@ -97,10 +114,31 @@ function renderProducts() {
     
     productGrid.innerHTML = '';
     
-    products.forEach(product => {
+    const noProductsDiv = document.getElementById('no-products');
+
+    const visibleProducts = currentCategory === 'All'
+        ? products
+        : products.filter(p => p.category === currentCategory);
+    
+    if (visibleProducts.length === 0) {
+        if (noProductsDiv) {
+            noProductsDiv.style.display = 'block';
+        }
+        return;
+    } else {
+        if (noProductsDiv) {
+            noProductsDiv.style.display = 'none';
+        }
+    }
+    
+    visibleProducts.forEach((product, index) => {
         const productCard = createProductCard(product);
+        productCard.style.animationDelay = `${index * 0.1}s`;
         productGrid.appendChild(productCard);
     });
+    
+    // Update category count in filter buttons
+    updateCategoryCount();
 }
 
 function createProductCard(product) {
@@ -108,11 +146,13 @@ function createProductCard(product) {
     card.className = 'product-card fade-in';
     card.innerHTML = `
         <div class="product-image">
-            <span>${product.image}</span>
+            <img src="${product.image}" alt="${product.name}" />
         </div>
         <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
-            <p class="product-price">$${product.price.toFixed(2)}</p>
+            <p class="product-category">${product.category}</p>
+            <p class="product-description">${product.description.substring(0, 50)}...</p>
+            <p class="product-price">${product.price.toFixed(2)}</p>
             <button class="add-to-cart" onclick="addToCart(${product.id})">
                 Add to Cart
             </button>
@@ -533,6 +573,39 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         // Service worker would be registered here in a production environment
         console.log('Service Worker support detected');
+    });
+}
+
+// Loading indicator functions
+function showLoadingIndicator() {
+    const loadingIndicator = document.getElementById('loading-indicator');
+    if (loadingIndicator) {
+        loadingIndicator.style.display = 'block';
+    }
+}
+
+function hideLoadingIndicator() {
+    const loadingIndicator = document.getElementById('loading-indicator');
+    if (loadingIndicator) {
+        loadingIndicator.style.display = 'none';
+    }
+}
+
+// Update category count in filter buttons
+function updateCategoryCount() {
+    const filterButtons = document.querySelectorAll('.category-btn');
+    filterButtons.forEach(btn => {
+        const category = btn.getAttribute('data-category');
+        let count;
+        if (category === 'All') {
+            count = products.length;
+        } else {
+            count = products.filter(p => p.category === category).length;
+        }
+        
+        // Update button text to include count
+        const originalText = btn.textContent.split(' (')[0];
+        btn.textContent = `${originalText} (${count})`;
     });
 }
 

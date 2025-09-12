@@ -62,8 +62,26 @@
     <section id="products" class="products">
         <div class="container">
             <h2 class="section-title">Our Collection</h2>
+            <p class="section-subtitle">Discover our premium range across 10 categories with 100+ products</p>
+            
+            
+            
+            <!-- Category Filters will be inserted here by JavaScript -->
+            
+            <!-- Loading indicator -->
+            <div id="loading-indicator" class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Loading products...</p>
+            </div>
+            
+            <!-- Product Grid -->
             <div class="product-grid" id="product-grid">
                 <!-- Products will be loaded dynamically -->
+            </div>
+            
+            <!-- No products message -->
+            <div id="no-products" class="no-products" style="display: none;">
+                <p>No products found in this category.</p>
             </div>
         </div>
     </section>
