@@ -1,4 +1,5 @@
 import React from 'react';
+import bb from '../assets/bb.jpg';
 
 const Navbar = ({ setCartOpen }) => {
   return (
@@ -6,7 +7,7 @@ const Navbar = ({ setCartOpen }) => {
       <div className="nav-container">
         <div>
           <a href="#home">
-            <img src="/website logo black banner.png" alt="BLACK BANNER" className="logo-img" />
+            <img src={bb} alt="home" className="logo-img" />
           </a>
         </div>
         <ul className="nav-menu">
