@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jaber Ahmed — Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+    :root{
+      --bg:#0b0b0b;
+      --muted:#9ca3af;
+      --card:#111;
+      --accent1:#8b5cf6;
+      --accent2:#ec4899;
+      --accent3:#00ff5e;
+    }
+    html,body{height:100%}
+    body{
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#f3f4f6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      border: 1px solid red;
+    }
+    .font-heading{font-family:"Space Grotesk", Inter, sans-serif}
+    .gradient-text{background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .glass{backdrop-filter: blur(6px); background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04)}
+    .nav-link{position:relative}
+    .nav-link::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:linear-gradient(90deg,var(--accent1),var(--accent2));transition:width .25s}
+    .nav-link:hover::after{width:100%}
+    /* project / card hover */
+    .project-card{transition:transform .35s ease, box-shadow .35s ease}
+    .project-card:hover{transform:translateY(-8px); box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+    /* carousel */
+    .carousel-slide{transition:transform .5s cubic-bezier(.2,.9,.3,1)}
+    /* video modal */
+    .modal-enter{opacity:0;transform:scale(.98)}
+    .modal-open{opacity:1;transform:scale(1)}
+    /* small screens tweak */
+    @media (max-width:640px){ .hide-sm{display:none} }
+  </style>
+</head>
+<body class="antialiased max-w-[1280px] mx-auto px-6">
+
+  <!-- NAV -->
+ <!-- NAV -->
+<nav class="fixed w-full z-50 top-0 left-0 px-6 py-4 glass">
+  <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+    
+    <!-- Left: Logo/Name -->
+    <div class="flex items-center gap-3">
+      
+      <div>
+
+
+        
+  <div class="font-heading text-lg font-bold typing">
+    Jaber Ahmed<span class="text-[var(--accent3)]" style="position: relative; top: -0.2em; left: 0.15em;">.</span>
+  </div>
+</div>
+
+<style>
+.typing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--accent3);
+  animation: typing 3s steps(20, end) infinite alternate,
+             blink .7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 12ch } /* Adjust to match character count */
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+</style>
+
+      <div class="font-heading text-lg font-bold flex items-center">
+  <span id="typed-name"></span> <!-- fallback text -->
+  <span id="logo-dot" class="text-[var(--accent3)]" style="position: relative; top: -0.2em; left: 0.15em;"></span>
+</div>
+    </div>
+
+    <!-- Right: Hire Me button -->
+    <!-- Right: Hire Me button -->
+<a href="#contact" class="inline-flex items-center px-5 py-3 rounded-full bg-gradient-to-r from-[var(--accent1)] to-[var(--accent2)] shadow hover:opacity-95 fade-up-btn">
+  <span class="">Hire Me</span>
+</a>
+
+<style>
+/* Fade up animation */
+.fade-up-btn {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+</style>
+
+    
+  </div>
+</nav>
+
+
+ <style>
+  /* Fade-up animation */
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-up {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0; /* start hidden */
+  }
+
+  /* Delay helper classes */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.3s; }
+  .delay-300 { animation-delay: 0.5s; }
+  .delay-400 { animation-delay: 0.7s; }
+  .delay-500 { animation-delay: 0.9s; }
+  .delay-600 { animation-delay:  1s; }
+
+</style>
+
+<header id="home" class="min-h-[85vh] flex items-center justify-center">
+  <div class="max-w-[900px] mx-auto px-6 text-center">
+    <h1 class="font-heading leading-tight">
+      <p class="text-[20px] md:text-[28px] font-light mb-[-10px] fade-up delay-100">
+        Hi! my name is,
+      </p> 
+      <p class="gradient-text text-[48px] md:text-[80px] font-bold fade-up delay-200">
+        Jaber Ahmed
+      </p>
+      <p class="text-lg md:text-2xl mt-[-10px] fade-up delay-300">
+        Web Developer • Motion Designer • Video Editor
+      </p>
+    </h1>
+    <p class="mt-6 text-base md:text-lg text-[var(--muted)] max-w-[700px] mx-auto fade-up delay-400">
+      I build fast, polished websites, create compelling motion graphics and edit raw footage into engaging videos...
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4 justify-center fade-up delay-500">
+      <a href="#projects" class="inline-flex items-center px-5 py-3 rounded-full bg-gradient-to-r from-[var(--accent1)] to-[var(--accent2)] shadow hover:opacity-95">
+        <i data-feather="monitor" class="w-4 h-4 mr-2"></i> View Projects
+      </a>
+      <a href="#contact" class="inline-flex items-center px-5 py-3 rounded-full border border-gray-700">
+        Contact
+      </a>
+    </div>
+    <div class="mt-6 text-sm text-[var(--muted)] fade-up delay-600">
+      Available for freelance & remote work
+    </div>
+  </div>
+</header>
+
+<script>
+  // Feather icons
+  feather.replace();
+</script>
+
+
+<style></style>
+
+
+
+
+
+
+
+  <!-- PROJECTS -->
+  <section id="projects"class="pb-24 border border-yellow-300 ml-[-25px] mr-[-25px] mt-[] mb-[-25px] max-h-[2000px]">
+    
+    <div class="max-w-ful mx-auto px-6">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold">Selected <span class="gradient-text">Web Projects</span></h2>
+        <p class="mt-2 text-[var(--muted)]">A sample of web projects I've built — interfaces, dashboards and full product sites.</p>
+      </div>
+
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Project 1 -->
+        <article class="project-card bg-[var(--card)] p-6 rounded-2xl border border-zinc-800" data-aos="fade-up">
+          <div class="flex items-start justify-between">
+            <h3 class="text-lg font-semibold">CineFlow</h3>
+            <span class="text-xs px-2 py-1 rounded-full text-[var(--accent1)] bg-white/5">Web</span>
+          </div>
+          <p class="mt-3 text-[var(--muted)]">A responsive, performance-optimized portfolio to showcase work — built with Tailwind CSS, accessible markup and subtle animations.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <a class="text-sm inline-flex items-center gap-2 text-[var(--accent1)]" href="#">View live<i data-feather="arrow-right" class="w-4 h-4"></i></a>
+            <a class="ml-auto text-sm text-[var(--muted)]">Role: Front-end</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card bg-[var(--card)] p-6 rounded-2xl border border-zinc-800" data-aos="fade-up" data-aos-delay="80">
+          <div class="flex items-start justify-between">
+            <h3 class="text-lg font-semibold">Help Hive</h3>
+            <span class="text-xs px-2 py-1 rounded-full text-green-300 bg-white/3">Dashboard</span>
+          </div>
+          <p class="mt-3 text-[var(--muted)]">Custom admin dashboard with charts, filters and export options — useful for small businesses to monitor traffic and conversions.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <a class="text-sm inline-flex items-center gap-2 text-[var(--accent1)]" href="#">View case<i data-feather="arrow-right" class="w-4 h-4"></i></a>
+            <a class="ml-auto text-sm text-[var(--muted)]">Role: Front-end / Data Viz</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card bg-[var(--card)] p-6 rounded-2xl border border-zinc-800" data-aos="fade-up" data-aos-delay="160">
+          <div class="flex items-start justify-between">
+            <h3 class="text-lg font-semibold">Medtek</h3>
+            <span class="text-xs px-2 py-1 rounded-full text-pink-300 bg-white/3">Web</span>
+          </div>
+          <p class="mt-3 text-[var(--muted)]">Clean product pages, fast checkout flow and inventory UI — integrated with common payment gateways and optimized for conversions.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <a class="text-sm inline-flex items-center gap-2 text-[var(--accent1)]" href="#">Case study <i data-feather="arrow-right" class="w-4 h-4"></i></a>
+            <a class="ml-auto text-sm text-[var(--muted)]">Role: Full-stack (UI)</a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card bg-[var(--card)] p-6 rounded-2xl border border-zinc-800" data-aos="fade-up" data-aos-delay="220">
+          <div class="flex items-start justify-between">
+            <h3 class="text-lg font-semibold">POST-IT</h3>
+            <span class="text-xs px-2 py-1 rounded-full text-yellow-300 bg-white/3">Realtime</span>
+          </div>
+          <p class="mt-3 text-[var(--muted)]">Custom scoreboard system for live cricket and football streams — lightweight, responsive and easy to manage during live events.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <a class="text-sm inline-flex items-center gap-2 text-[var(--accent1)]" href="#">See demo<i data-feather="arrow-right" class="w-4 h-4"></i></a>
+            <a class="ml-auto text-sm text-[var(--muted)]">Role: Front-end / Integration</a>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card bg-[var(--card)] p-6 rounded-2xl border border-zinc-800" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-start justify-between">
+            <h3 class="text-lg font-semibold">EduGoal</h3>
+            <span class="text-xs px-2 py-1 rounded-full text-blue-300 bg-white/3">Tech Course Web</span>
+          </div>
+          <p class="mt-3 text-[var(--muted)]">Prototype social feed with anonymous likes, guest browsing and simple profile dashboards — prototyped for UX testing and iteration.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <a class="text-sm inline-flex items-center gap-2 text-[var(--accent1)]" href="#">Prototype<i data-feather="arrow-right" class="w-4 h-4"></i></a>
+            <a class="ml-auto text-sm text-[var(--muted)]">Under Development</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO EDITING SECTION -->
+  <section id="videos" class="py-16 bg-[#071018]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-8" data-aos="fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold">Video <span class="gradient-text">Editing</span></h2>
+        <p class="mt-2 text-[var(--muted)]">Raw footage samples — click a thumbnail to open the video in a fullscreen modal. Press <kbd class="px-2 py-1 bg-zinc-800 rounded">ESC</kbd> or click outside to close.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Video item template (repeat with placeholders) -->
+        <div class="bg-[var(--card)] rounded-2xl overflow-hidden p-4" data-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+          <div class="relative group cursor-pointer video-thumb" tabindex="0">
+            <img src="https://placehold.co/640x360/111827/8b5cf6?text=Raw+Video+1" alt="Raw video 1" class="w-full h-44 object-cover rounded-lg">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-feather="play" class="w-6 h-6 text-white"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="font-semibold">Live Match - Raw Footage</div>
+            <div class="text-xs text-[var(--muted)] mt-1">Uncut raw recording used for editing demos.</div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--card)] rounded-2xl overflow-hidden p-4" data-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+          <div class="relative group cursor-pointer video-thumb" tabindex="0">
+            <img src="https://placehold.co/640x360/111827/ec4899?text=Raw+Video+2" alt="Raw video 2" class="w-full h-44 object-cover rounded-lg">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-feather="play" class="w-6 h-6 text-white"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="font-semibold">Post-match Highlights (Raw)</div>
+            <div class="text-xs text-[var(--muted)] mt-1">Clips captured live — ready for editing and color grade.</div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--card)] rounded-2xl overflow-hidden p-4" data-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+          <div class="relative group cursor-pointer video-thumb" tabindex="0">
+            <img src="https://placehold.co/640x360/111827/06b6d4?text=Raw+Video+3" alt="Raw video 3" class="w-full h-44 object-cover rounded-lg">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-feather="play" class="w-6 h-6 text-white"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="font-semibold">Editing Reel - Raw Files</div>
+            <div class="text-xs text-[var(--muted)] mt-1">Raw takes used in editing reels and transitions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video modal (hidden by default) -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
+    <div id="video-modal-inner" class="w-full max-w-5xl mx-auto rounded-xl overflow-hidden relative modal-enter">
+      <button id="modal-close" class="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/5 hover:bg-white/7">
+        <i data-feather="x" class="w-5 h-5 text-white"></i>
+      </button>
+      <video id="modal-video" controls playsinline class="w-full h-[70vh] bg-black">
+        <!-- source set dynamically -->
+      </video>
+    </div>
+  </div>
+
+  <!-- DESIGNS (Carousel) -->
+  <section id="designs" class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-8" data-aos="fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold">Design <span class="gradient-text">Showcase</span></h2>
+        <p class="mt-2 text-[var(--muted)]">Carousel of design work — click arrows to navigate or let it autoplay.</p>
+      </div>
+
+      <div class="relative max-w-5xl mx-auto" data-aos="fade-up">
+        <div id="carousel" class="overflow-hidden rounded-2xl bg-[var(--card)] border border-zinc-800">
+          <div id="slides" class="flex transition-transform duration-500">
+            <!-- slide 1 -->
+            <div class="min-w-full p-6">
+              <img src="https://placehold.co/1200x600/111827/8b5cf6?text=Design+1" alt="Design 1" class="w-full rounded-lg object-cover">
+              <div class="mt-4 text-[var(--muted)]">Poster concept & branding mock</div>
+            </div>
+            <!-- slide 2 -->
+            <div class="min-w-full p-6">
+              <img src="https://placehold.co/1200x600/111827/ec4899?text=Design+2" alt="Design 2" class="w-full rounded-lg object-cover">
+              <div class="mt-4 text-[var(--muted)]">Social carousel & motion frames</div>
+            </div>
+            <!-- slide 3 -->
+            <div class="min-w-full p-6">
+              <img src="https://placehold.co/1200x600/111827/06b6d4?text=Design+3" alt="Design 3" class="w-full rounded-lg object-cover">
+              <div class="mt-4 text-[var(--muted)]">Ad creative & thumbnail variants</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- controls -->
+        <div class="absolute inset-y-0 left-2 flex items-center">
+          <button id="prev" class="p-2 rounded-full bg-white/5">
+            <i data-feather="chevron-left" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="absolute inset-y-0 right-2 flex items-center">
+          <button id="next" class="p-2 rounded-full bg-white/5">
+            <i data-feather="chevron-right" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16 bg-[#071018]">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+      <div data-aos="fade-right">
+        <img src="https://placehold.co/900x700/121212/8b5cf6?text=Jaber+Ahmed" alt="Jaber Ahmed" class="rounded-2xl shadow-lg w-full object-cover">
+      </div>
+      <div data-aos="fade-left">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold">About <span class="gradient-text">Me</span></h2>
+        <p class="mt-4 text-[var(--muted)]">
+          I'm <strong>Jaber Ahmed</strong>, a web developer and motion designer with a focus on clean interfaces and cinematic video editing.
+          Over the years I’ve built websites, dashboards and live score systems, produced motion graphics and edited raw footage into
+          engaging content for social and streaming platforms. My approach combines technical front-end skills (HTML/CSS/JS/Tailwind) with
+          visual storytelling — ensuring both polished visuals and fast, accessible experiences.
+        </p>
+
+        <ul class="mt-6 space-y-2 text-[var(--muted)]">
+          <li>• Front-end development: HTML, CSS, JavaScript, Tailwind</li>
+          <li>• Motion & editing: After Effects, Premiere Pro, camera-to-edit workflows</li>
+          <li>• Data visualization & dashboards for small businesses</li>
+          <li>• Available for freelance projects, collaborations and consulting</li>
+        </ul>
+
+        <div class="mt-6">
+          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-[var(--accent1)] to-[var(--accent2)]">
+            <i data-feather="mail" class="w-4 h-4"></i> Get in touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="pt-12 pb-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-[var(--accent1)] to-[var(--accent2)] flex items-center justify-center">
+              <i data-feather="zap" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <div class="font-heading font-bold text-lg">Jaber Ahmed</div>
+              <div class="text-[var(--muted)] text-sm">Web Developer & Motion Designer</div>
+            </div>
+          </div>
+
+          <p class="mt-4 text-[var(--muted)]">I create websites, motion graphics and edited videos that help brands communicate clearly and move viewers.</p>
+
+          <div class="mt-6 flex gap-4">
+            <a href="https://www.linkedin.com/in/jaberahmed435/" target="_blank" class="text-[var(--muted)] hover:text-[var(--accent1)]">
+              <i data-feather="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="https://www.youtube.com/@jaberahmed9520/videos" target="_blank" class="text-[var(--muted)] hover:text-[var(--accent1)]">
+              <i data-feather="youtube" class="w-5 h-5"></i>
+            </a>
+            <a href="https://www.instagram.com/__jaberahmed__/" target="_blank" class="text-[var(--muted)] hover:text-[var(--accent1)]">
+              <i data-feather="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="https://www.facebook.com/mdjaberahmed435" target="_blank" class="text-[var(--muted)] hover:text-[var(--accent1)]">
+              <i data-feather="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1I8uZsNDTEl22Vwwsg1cGO5_D5P1j4KVa" target="_blank" class="text-[var(--muted)] hover:text-[var(--accent1)]">
+              <i data-feather="folder" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Services</h4>
+          <ul class="text-[var(--muted)] space-y-2">
+            <li>• Web Development</li>
+            <li>• UI / UX & Motion</li>
+            <li>• Video Editing</li>
+            <li>• Analytics & Dashboards</li>
+            <li>• Design & Branding</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Contact</h4>
+          <p class="text-[var(--muted)]">Prefer to connect on LinkedIn or send a quick message via email.</p>
+          <div class="mt-3 text-[var(--muted)]">
+            <div class="flex items-center gap-2">
+              <i data-feather="mail" class="w-4 h-4"></i>
+              <a href="mailto:hello@jaberahmed.dev" class="hover:text-[var(--accent1)]">hello@jaberahmed.dev</a>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <i data-feather="map-pin" class="w-4 h-4"></i>
+              <span>Based in Bangladesh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center text-[var(--muted)] text-sm border-t border-zinc-800 pt-6">
+        &copy; <span id="year"></span> Jaber Ahmed — All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Feather & AOS init
+    feather.replace();
+    AOS.init({duration:700, once:true});
+
+    // mobile toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileToggle.addEventListener('click', ()=> {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // set footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* -----------------------------
+       VIDEO MODAL (click thumbnails)
+       - open modal with provided video src
+       - play automatically
+       - close on ESC or click outside or close button
+    ------------------------------*/
+    const thumbs = document.querySelectorAll('.video-thumb');
+    const modal = document.getElementById('video-modal');
+    const modalInner = document.getElementById('video-modal-inner');
+    const modalVideo = document.getElementById('modal-video');
+    const modalClose = document.getElementById('modal-close');
+
+    function openVideo(src){
+      modalVideo.pause();
+      modalVideo.src = src;
+      modal.classList.remove('hidden');
+      // small animation classes
+      setTimeout(()=> modalInner.classList.add('modal-open'), 10);
+      setTimeout(()=> {
+        modalVideo.play().catch(()=>{/* autoplay blocked; user will need to press play */});
+      }, 120);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideo(){
+      modalInner.classList.remove('modal-open');
+      setTimeout(()=> {
+        modal.classList.add('hidden');
+        modalVideo.pause();
+        modalVideo.src = '';
+        document.body.style.overflow = '';
+      }, 180);
+    }
+
+    thumbs.forEach(t => {
+      const parent = t.closest('[data-src]');
+      const src = parent?.getAttribute('data-src');
+      if(!src) return;
+      t.addEventListener('click', ()=> openVideo(src));
+      t.addEventListener('keydown', (e)=> { if(e.key === 'Enter' || e.key === ' ') openVideo(src) });
+    });
+
+    // close by overlay click
+    modal.addEventListener('click', (e)=>{
+      if(e.target === modal || e.target === modalClose) closeVideo();
+    });
+    modalClose.addEventListener('click', closeVideo);
+
+    // ESC key
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && !modal.classList.contains('hidden')){
+        closeVideo();
+      }
+    });
+
+    /* -----------------------------
+      DESIGNS CAROUSEL
+      - simple slider with prev/next & autoplay
+    ------------------------------*/
+    const slidesWrap = document.getElementById('slides');
+    const slides = slidesWrap.children;
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let index = 0;
+    const total = slides.length;
+    let autoplayTimer = null;
+    function goTo(i){
+      index = (i + total) % total;
+      slidesWrap.style.transform = `translateX(-${index * 100}%)`;
+    }
+    prevBtn.addEventListener('click', ()=> { goTo(index - 1); resetAutoplay(); });
+    nextBtn.addEventListener('click', ()=> { goTo(index + 1); resetAutoplay(); });
+
+    function startAutoplay(){
+      autoplayTimer = setInterval(()=> {
+        goTo(index + 1);
+      }, 4000);
+    }
+    function resetAutoplay(){
+      if(autoplayTimer) clearInterval(autoplayTimer);
+      startAutoplay();
+    }
+    // initialize
+    goTo(0);
+    startAutoplay();
+
+    /* Accessibility: pause carousel on hover/focus */
+    const carousel = document.getElementById('carousel');
+    carousel.addEventListener('mouseenter', ()=> { if(autoplayTimer) clearInterval(autoplayTimer); });
+    carousel.addEventListener('mouseleave', ()=> { resetAutoplay(); });
+
+    /* keyboard navigation for carousel */
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowLeft') goTo(index - 1);
+      if(e.key === 'ArrowRight') goTo(index + 1);
+    });
+
+    // small enhancement: progressive image loading (optional)
+    document.querySelectorAll('img').forEach(img=>{
+      if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  </script>
+</body>
+</html>
