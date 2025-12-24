@@ -1,0 +1,44 @@
+DB_USER=disc
+DB_PASSWORD=wkuL53E3vqJFeoAb
+use const db, then db collection chats-
+
+
+use this--
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://<db_username>:<db_password>@cluster0.osatkz4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
+
+
+
+---
+
+error
+⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. Error Component Stack
+    at BrowserRouter (react-router-dom.js?v=bf31d52e:5247:5)
+    at Provider (chunk-EDHXDBIV.js?v=bf31d52e:43:15)
+    at TooltipProvider (@radix-ui_react-tooltip.js?v=bf31d52e:56:5)
+    at QueryClientProvider (@tanstack_react-query.js?v=bf31d52e:2874:3)
+    at App (<anonymous>)

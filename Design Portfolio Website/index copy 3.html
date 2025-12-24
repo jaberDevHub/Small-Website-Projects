@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -52,14 +51,18 @@
 <body class="antialiased max-w-[1280px] mx-auto px-6">
 
   <!-- NAV -->
- <!-- NAV -->
 <nav class="fixed w-full z-50 top-0 left-0 px-6 py-4 glass">
   <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+    
     <!-- Left: Logo/Name -->
     <div class="flex items-center gap-3">
+      
       <div>
+
+
+        
   <div class="font-heading text-lg font-bold typing">
-    Jaber Ahmed <span class="text-[var(--accent3)]" style="position: relative; top: -0.2em; left: 0.15em;">.</span>
+    Jaber Ahmed<span class="text-[var(--accent3)]" style="position: relative; top: -0.2em; left: 0.15em;">.</span>
   </div>
 </div>
 
@@ -89,7 +92,6 @@
 </div>
     </div>
 
-    <!-- Right: Hire Me button -->
     <!-- Right: Hire Me button -->
 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jabarahmed332@gmail.com" 
    target="_blank" 
@@ -179,12 +181,6 @@
   feather.replace();
 </script>
 
-
-<style></style>
-
-
-
-
   <!-- PROJECTS -->
   <section id="projects"class="pb-24 ml-[-25px] mr-[-25px] mt-[] mb-[-25px] max-h-[2000px]">
     
@@ -264,64 +260,94 @@
     </div>
   </section>
 
-  <!-- SOFTWARE & EXTENSIONS -->
-  <section id="software" class="py-16">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-10" data-aos="fade-up">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold"><span class="gradient-text">Software & Extensions</span></h2>
-        <p class="mt-2 text-[var(--muted)]">Tools and extensions I've built to solve problems and improve workflows.</p>
+  <!-- VIDEO EDITING SHOWCASE -->
+  <section id="video-editing" class="py-24 bg-[#071018]">
+    <div class="max-w-full mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold"><span class="gradient-text">Video Editing Projects</span></h2>
+        <p class="mt-2 text-[var(--muted)]">Cinematic edits, promos, and storytelling — from raw footage to polished videos.</p>
       </div>
 
-      <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-4xl mx-auto">
-        <!-- FrameCut -->
-        <div class="project-card bg-[var(--card)] p-6 rounded-2xl border border-zinc-800" data-aos="fade-up">
-          <div class="flex items-start justify-between">
-            <h3 class="text-xl font-semibold">FrameCut</h3>
-            <span class="text-xs px-2 py-1 rounded-full text-blue-300 bg-white/5">Desktop App</span>
+      <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Video 1 -->
+        <div class="project-card bg-[var(--card)] rounded-2xl overflow-hidden border border-zinc-800 cursor-pointer video-thumb" data-aos="fade-up" data-src="https://www.youtube.com/embed/EXAMPLE1">
+          <div class="aspect-video bg-zinc-900 relative">
+            <img src="https://placehold.co/600x340/111111/8b5cf6?text=Promo+Teaser" alt="Promo Teaser thumbnail" class="w-full h-full object-cover">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i data-feather="play-circle" class="w-16 h-16 text-white opacity-80"></i>
+            </div>
           </div>
-          <p class="mt-3 text-[var(--muted)]">A powerful video frame extraction tool that lets you extract high-quality frames from videos with precision and ease.</p>
-          <div class="mt-4 flex items-center gap-2 flex-wrap">
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-blue-300">Python</span>
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-green-300">OpenCV</span>
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-purple-300">Tkinter</span>
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-yellow-300">FFmpeg</span>
-          </div>
-          <div class="mt-6 flex items-center gap-3">
-            <a href="https://github.com/jaberDevHub/FrameCut" target="_blank" class="inline-flex items-center px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors group">
-              <i data-feather="github" class="w-4 h-4 mr-2 group-hover:text-[var(--accent1)] transition-colors"></i> 
-              <span>View on GitHub</span>
-            </a>
-            <a href="https://github.com/jaberDevHub/FrameCut/releases/latest" class="text-sm text-[var(--muted)] hover:text-white transition-colors group flex items-center">
-              <i data-feather="download" class="w-4 h-4 mr-1 group-hover:text-[var(--accent2)] transition-colors"></i> 
-              <span>Download</span>
-            </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold">Brand Promo Teaser</h3>
+            <p class="mt-2 text-[var(--muted)] text-sm">30-second hype reel with dynamic cuts, color grading, and sound design.</p>
+            <span class="mt-3 inline-block text-xs px-2 py-1 rounded-full text-cyan-300 bg-white/5">Premiere Pro</span>
           </div>
         </div>
 
-        <!-- YouTube Title Scraper -->
-        <div class="project-card bg-[var(--card)] p-6 rounded-2xl border border-zinc-800" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-start justify-between">
-            <h3 class="text-xl font-semibold">YouTube Title Scraper</h3>
-            <span class="text-xs px-2 py-1 rounded-full text-purple-300 bg-white/5">Chrome Extension</span>
+        <!-- Video 2 -->
+        <div class="project-card bg-[var(--card)] rounded-2xl overflow-hidden border border-zinc-800 cursor-pointer video-thumb" data-aos="fade-up" data-aos-delay="100" data-src="https://www.youtube.com/embed/EXAMPLE2">
+          <div class="aspect-video bg-zinc-900 relative">
+            <img src="https://placehold.co/600x340/111111/ec4899?text=Event+Recap" alt="Event Recap thumbnail" class="w-full h-full object-cover">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i data-feather="play-circle" class="w-16 h-16 text-white opacity-80"></i>
+            </div>
           </div>
-          <p class="mt-3 text-[var(--muted)]">Easily extract and copy video titles from YouTube playlists or channels with this lightweight Chrome extension.</p>
-          <div class="mt-4 flex items-center gap-2 flex-wrap">
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-yellow-300">JavaScript</span>
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-blue-300">Chrome API</span>
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-green-300">HTML5</span>
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-pink-300">CSS3</span>
-          </div>
-          <div class="mt-6 flex items-center gap-3">
-            <a href="https://github.com/jaberDevHub/Youtube_Title_Scraper" target="_blank" class="inline-flex items-center px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors group">
-              <i data-feather="github" class="w-4 h-4 mr-2 group-hover:text-[var(--accent1)] transition-colors"></i> 
-              <span>View on GitHub</span>
-            </a>
-            <a href="https://chrome.google.com/webstore/detail/your-extension-id" class="text-sm text-[var(--muted)] hover:text-white transition-colors group flex items-center">
-              <i data-feather="external-link" class="w-4 h-4 mr-1 group-hover:text-[var(--accent2)] transition-colors"></i> 
-              <span>Add to Chrome</span>
-            </a>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold">Tech Event Recap</h3>
+            <p class="mt-2 text-[var(--muted)] text-sm">Multi-cam event highlights with motion graphics and transitions.</p>
+            <span class="mt-3 inline-block text-xs px-2 py-1 rounded-full text-pink-300 bg-white/5">After Effects + Premiere</span>
           </div>
         </div>
+
+        <!-- Video 3 -->
+        <div class="project-card bg-[var(--card)] rounded-2xl overflow-hidden border border-zinc-800 cursor-pointer video-thumb" data-aos="fade-up" data-aos-delay="200" data-src="https://www.youtube.com/embed/EXAMPLE3">
+          <div class="aspect-video bg-zinc-900 relative">
+            <img src="https://placehold.co/600x340/111111/00ff5e?text=Short+Film" alt="Short Film thumbnail" class="w-full h-full object-cover">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <i data-feather="play-circle" class="w-16 h-16 text-white opacity-80"></i>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold">Narrative Short</h3>
+            <p class="mt-2 text-[var(--muted)] text-sm">Story-driven edit with pacing, soundscapes, and subtle VFX.</p>
+            <span class="mt-3 inline-block text-xs px-2 py-1 rounded-full text-green-300 bg-white/5">DaVinci Resolve</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DESIGN SHOWCASE -->
+  <section id="design-showcase" class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold"><span class="gradient-text">Design Portfolio</span></h2>
+        <p class="mt-2 text-[var(--muted)]">Explore my latest design works and creative projects on Behance</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto" data-aos="fade-up">
+        <a href="https://www.behance.net/jabarahmed" target="_blank" class="block group">
+          <div class="bg-[var(--card)] rounded-2xl overflow-hidden border border-zinc-800 hover:border-[var(--accent1)] transition-all duration-300">
+            <div class="relative aspect-[16/9] bg-gradient-to-br from-[#1e1b4b] to-[#312e81]">
+              <div class="absolute inset-0 flex items-center justify-center p-8 text-center">
+                <div>
+                  <i data-feather="layers" class="w-16 h-16 mx-auto mb-6 text-white opacity-90 group-hover:scale-110 transition-transform duration-300"></i>
+                  <h3 class="font-heading text-2xl md:text-3xl font-bold text-white mb-3">View My Behance Portfolio</h3>
+                  <p class="text-[var(--muted)] max-w-md mx-auto">Discover my collection of design projects, case studies, and creative works</p>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div class="w-full">
+                  <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm">
+                    <span>Visit Behance</span>
+                    <i data-feather="arrow-up-right" class="w-4 h-4 ml-2"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -330,7 +356,7 @@
   <section id="about" class="py-16 bg-[#071018]">
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
       <div data-aos="fade-right">
-        <img src="jaber.jpg" alt="Jaber Ahmed" class="rounded-2xl shadow-lg w-full object-cover">
+        <img src="https://placehold.co/900x700/121212/8b5cf6?text=Jaber+Ahmed" alt="Jaber Ahmed" class="rounded-2xl shadow-lg w-full object-cover">
       </div>
       <div data-aos="fade-left">
         <h2 class="font-heading text-3xl md:text-4xl font-bold">About <span class="gradient-text">Me</span></h2>
@@ -426,27 +452,29 @@
     </div>
   </footer>
 
+  <!-- VIDEO MODAL -->
+  <div id="video-modal" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center p-4" tabindex="-1">
+    <div id="video-modal-inner" class="relative max-w-5xl w-full modal-enter transition-all duration-200">
+      <button id="modal-close" class="absolute -top-12 right-0 text-white/70 hover:text-white">
+        <i data-feather="x" class="w-8 h-8"></i>
+      </button>
+      <div class="aspect-video bg-black rounded-2xl overflow-hidden">
+        <iframe id="modal-video" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- SCRIPTS -->
   <script>
     // Feather & AOS init
     feather.replace();
     AOS.init({duration:700, once:true});
 
-    // mobile toggle
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileToggle.addEventListener('click', ()=> {
-      mobileMenu.classList.toggle('hidden');
-    });
-
     // set footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     /* -----------------------------
        VIDEO MODAL (click thumbnails)
-       - open modal with provided video src
-       - play automatically
-       - close on ESC or click outside or close button
     ------------------------------*/
     const thumbs = document.querySelectorAll('.video-thumb');
     const modal = document.getElementById('video-modal');
@@ -455,14 +483,9 @@
     const modalClose = document.getElementById('modal-close');
 
     function openVideo(src){
-      modalVideo.pause();
-      modalVideo.src = src;
+      modalVideo.src = src + '?autoplay=1';
       modal.classList.remove('hidden');
-      // small animation classes
       setTimeout(()=> modalInner.classList.add('modal-open'), 10);
-      setTimeout(()=> {
-        modalVideo.play().catch(()=>{/* autoplay blocked; user will need to press play */});
-      }, 120);
       document.body.style.overflow = 'hidden';
     }
 
@@ -470,27 +493,23 @@
       modalInner.classList.remove('modal-open');
       setTimeout(()=> {
         modal.classList.add('hidden');
-        modalVideo.pause();
         modalVideo.src = '';
         document.body.style.overflow = '';
       }, 180);
     }
 
     thumbs.forEach(t => {
-      const parent = t.closest('[data-src]');
-      const src = parent?.getAttribute('data-src');
+      const src = t.getAttribute('data-src');
       if(!src) return;
       t.addEventListener('click', ()=> openVideo(src));
       t.addEventListener('keydown', (e)=> { if(e.key === 'Enter' || e.key === ' ') openVideo(src) });
     });
 
-    // close by overlay click
     modal.addEventListener('click', (e)=>{
       if(e.target === modal || e.target === modalClose) closeVideo();
     });
     modalClose.addEventListener('click', closeVideo);
 
-    // ESC key
     document.addEventListener('keydown', (e)=>{
       if(e.key === 'Escape' && !modal.classList.contains('hidden')){
         closeVideo();
@@ -499,7 +518,6 @@
 
     /* -----------------------------
       DESIGNS CAROUSEL
-      - simple slider with prev/next & autoplay
     ------------------------------*/
     const slidesWrap = document.getElementById('slides');
     const slides = slidesWrap.children;
@@ -524,55 +542,25 @@
       if(autoplayTimer) clearInterval(autoplayTimer);
       startAutoplay();
     }
-    // initialize
     goTo(0);
     startAutoplay();
 
-    /* Accessibility: pause carousel on hover/focus */
     const carousel = document.getElementById('carousel');
     carousel.addEventListener('mouseenter', ()=> { if(autoplayTimer) clearInterval(autoplayTimer); });
     carousel.addEventListener('mouseleave', ()=> { resetAutoplay(); });
 
-    /* keyboard navigation for carousel */
     document.addEventListener('keydown', (e)=>{
-      if(e.key === 'ArrowLeft') goTo(index - 1);
-      if(e.key === 'ArrowRight') goTo(index + 1);
+      if(e.key === 'ArrowLeft') { goTo(index - 1); resetAutoplay(); }
+      if(e.key === 'ArrowRight') { goTo(index + 1); resetAutoplay(); }
     });
 
-    // small enhancement: progressive image loading (optional)
+    // lazy load images
     document.querySelectorAll('img').forEach(img=>{
       if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    // Remove carousel autoplay since we've removed the carousel
+    if (autoplayTimer) clearInterval(autoplayTimer);
   </script>
 </body>
 </html>
-
-

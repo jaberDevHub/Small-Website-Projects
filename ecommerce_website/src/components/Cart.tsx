@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Cart = () => {
   return (
     <section className="py-20 bg-gray-50">

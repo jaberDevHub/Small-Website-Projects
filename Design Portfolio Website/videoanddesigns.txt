@@ -1,0 +1,114 @@
+
+  <!-- VIDEO EDITING SECTION -->
+  <section id="videos" class="py-16 bg-[#071018]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-8" data-aos="fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold">Video <span class="gradient-text">Editing</span></h2>
+        <p class="mt-2 text-[var(--muted)]">Raw footage samples — click a thumbnail to open the video in a fullscreen modal. Press <kbd class="px-2 py-1 bg-zinc-800 rounded">ESC</kbd> or click outside to close.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Video item template (repeat with placeholders) -->
+        <div class="bg-[var(--card)] rounded-2xl overflow-hidden p-4" data-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+          <div class="relative group cursor-pointer video-thumb" tabindex="0">
+            <img src="https://placehold.co/640x360/111827/8b5cf6?text=Raw+Video+1" alt="Raw video 1" class="w-full h-44 object-cover rounded-lg">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-feather="play" class="w-6 h-6 text-white"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="font-semibold">Live Match - Raw Footage</div>
+            <div class="text-xs text-[var(--muted)] mt-1">Uncut raw recording used for editing demos.</div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--card)] rounded-2xl overflow-hidden p-4" data-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+          <div class="relative group cursor-pointer video-thumb" tabindex="0">
+            <img src="https://placehold.co/640x360/111827/ec4899?text=Raw+Video+2" alt="Raw video 2" class="w-full h-44 object-cover rounded-lg">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-feather="play" class="w-6 h-6 text-white"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="font-semibold">Post-match Highlights (Raw)</div>
+            <div class="text-xs text-[var(--muted)] mt-1">Clips captured live — ready for editing and color grade.</div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--card)] rounded-2xl overflow-hidden p-4" data-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+          <div class="relative group cursor-pointer video-thumb" tabindex="0">
+            <img src="https://placehold.co/640x360/111827/06b6d4?text=Raw+Video+3" alt="Raw video 3" class="w-full h-44 object-cover rounded-lg">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-feather="play" class="w-6 h-6 text-white"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="font-semibold">Editing Reel - Raw Files</div>
+            <div class="text-xs text-[var(--muted)] mt-1">Raw takes used in editing reels and transitions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video modal (hidden by default) -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
+    <div id="video-modal-inner" class="w-full max-w-5xl mx-auto rounded-xl overflow-hidden relative modal-enter">
+      <button id="modal-close" class="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/5 hover:bg-white/7">
+        <i data-feather="x" class="w-5 h-5 text-white"></i>
+      </button>
+      <video id="modal-video" controls playsinline class="w-full h-[70vh] bg-black">
+        <!-- source set dynamically -->
+      </video>
+    </div>
+  </div>
+
+  <!-- DESIGNS (Carousel) -->
+  <section id="designs" class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-8" data-aos="fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold">Design <span class="gradient-text">Showcase</span></h2>
+        <p class="mt-2 text-[var(--muted)]">Carousel of design work — click arrows to navigate or let it autoplay.</p>
+      </div>
+
+      <div class="relative max-w-5xl mx-auto" data-aos="fade-up">
+        <div id="carousel" class="overflow-hidden rounded-2xl bg-[var(--card)] border border-zinc-800">
+          <div id="slides" class="flex transition-transform duration-500">
+            <!-- slide 1 -->
+            <div class="min-w-full p-6">
+              <img src="https://placehold.co/1200x600/111827/8b5cf6?text=Design+1" alt="Design 1" class="w-full rounded-lg object-cover">
+              <div class="mt-4 text-[var(--muted)]">Poster concept & branding mock</div>
+            </div>
+            <!-- slide 2 -->
+            <div class="min-w-full p-6">
+              <img src="https://placehold.co/1200x600/111827/ec4899?text=Design+2" alt="Design 2" class="w-full rounded-lg object-cover">
+              <div class="mt-4 text-[var(--muted)]">Social carousel & motion frames</div>
+            </div>
+            <!-- slide 3 -->
+            <div class="min-w-full p-6">
+              <img src="https://placehold.co/1200x600/111827/06b6d4?text=Design+3" alt="Design 3" class="w-full rounded-lg object-cover">
+              <div class="mt-4 text-[var(--muted)]">Ad creative & thumbnail variants</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- controls -->
+        <div class="absolute inset-y-0 left-2 flex items-center">
+          <button id="prev" class="p-2 rounded-full bg-white/5">
+            <i data-feather="chevron-left" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="absolute inset-y-0 right-2 flex items-center">
+          <button id="next" class="p-2 rounded-full bg-white/5">
+            <i data-feather="chevron-right" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
