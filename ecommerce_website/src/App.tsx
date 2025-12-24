@@ -4,7 +4,7 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import Footer from './components/Footer';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Navbar />
@@ -15,5 +15,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
