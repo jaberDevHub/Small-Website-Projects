@@ -125,7 +125,7 @@ const Products = () => {
           return (
             <motion.div
               key={product.id}
-              className={`sticky top-0 h-screen flex items-center justify-center ${bgColor}`}
+              className={`sticky top-0 min-h-screen flex items-center justify-center ${bgColor} py-20`}
               style={{ y }}
             >
               <motion.div
@@ -201,7 +201,7 @@ const Products = () => {
         return (
           <motion.div
             key={product.id}
-            className={`sticky top-0 h-screen flex items-center ${bgColor}`}
+            className={`sticky top-0 min-h-screen flex items-center ${bgColor} py-20`}
             style={{ y }}
           >
             <motion.div
