@@ -67,7 +67,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.p
-          className="text-xl md:text-2xl font-light mb-16 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl md:text-2xl font-light mb-12 max-w-3xl mx-auto leading-relaxed"
           style={{
             textShadow: '0 0 20px rgba(255,255,255,0.6), 0 0 40px rgba(255,255,255,0.3)'
           }}
@@ -80,7 +80,7 @@ const Hero = () => {
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1.0, ease: "easeOut" }}
@@ -112,7 +112,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+          className="mt-12 grid grid-cols-3 gap-6 max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.4, ease: "easeOut" }}
@@ -153,7 +153,7 @@ const Hero = () => {
 
       {/* Subtle scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 bottom-11 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
