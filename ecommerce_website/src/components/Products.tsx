@@ -1,13 +1,6 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 const Products = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
   const products = [
     {
       id: 1,
@@ -108,15 +101,8 @@ const Products = () => {
   ];
 
   return (
-    <section ref={containerRef} className="relative">
+    <section className="relative">
       {products.map((product, index) => {
-        const start = index * 0.25;
-        const end = start + 0.25;
-
-        const y = useTransform(scrollYProgress, [start, end], ['100vh', '0vh']);
-        const opacity = useTransform(scrollYProgress, [start, start + 0.1], [0, 1]);
-        const rotate = useTransform(scrollYProgress, [start, end], [5, 0]);
-
         // Alternate background colors for variety
         const bgColors = ['bg-white', 'bg-gray-50', 'bg-gradient-to-br from-blue-50 to-indigo-100', 'bg-gradient-to-br from-purple-50 to-pink-100'];
         const bgColor = bgColors[index % bgColors.length];
@@ -125,12 +111,14 @@ const Products = () => {
           return (
             <motion.div
               key={product.id}
-              className={`sticky top-0 min-h-screen flex items-center justify-center ${bgColor} py-20`}
-              style={{ y }}
+              className={`${bgColor} py-32`}
             >
               <motion.div
                 className="container mx-auto px-6 max-w-4xl text-center"
-                style={{ opacity, rotate }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
               >
                 {/* Centered Layout */}
                 <motion.div
@@ -201,12 +189,14 @@ const Products = () => {
         return (
           <motion.div
             key={product.id}
-            className={`sticky top-0 min-h-screen flex items-center ${bgColor} py-20`}
-            style={{ y }}
+            className={`${bgColor} py-32`}
           >
             <motion.div
               className={`container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center ${isLeft ? '' : 'lg:grid-flow-col-dense'}`}
-              style={{ opacity }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
             >
               {/* Product Image */}
               <motion.div
