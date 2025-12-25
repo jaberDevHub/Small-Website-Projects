@@ -112,41 +112,55 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="mt-12 grid grid-cols-3 gap-6 max-w-2xl mx-auto"
+          className="mt-8 mb-16 grid grid-cols-3 gap-4 max-w-3xl mx-auto px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.4, ease: "easeOut" }}
         >
-          <div className="text-center bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-            <div className="text-3xl font-bold mb-2 drop-shadow-lg"
+          <motion.div
+            className="text-center bg-black/30 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl min-h-[140px] flex flex-col justify-center"
+            whileHover={{ scale: 1.05, y: -5 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="text-4xl font-bold mb-3 drop-shadow-lg"
                  style={{
-                   textShadow: '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)'
+                   textShadow: '0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.5)'
                  }}>500+</div>
-            <div className="text-sm font-light opacity-90 drop-shadow-md"
+            <div className="text-sm font-medium opacity-95 drop-shadow-md leading-tight"
                  style={{
-                   textShadow: '0 0 10px rgba(255,255,255,0.6)'
+                   textShadow: '0 0 10px rgba(255,255,255,0.7)'
                  }}>Happy Customers</div>
-          </div>
-          <div className="text-center bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-            <div className="text-3xl font-bold mb-2 drop-shadow-lg"
+          </motion.div>
+
+          <motion.div
+            className="text-center bg-black/30 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl min-h-[140px] flex flex-col justify-center"
+            whileHover={{ scale: 1.05, y: -5 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="text-4xl font-bold mb-3 drop-shadow-lg"
                  style={{
-                   textShadow: '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)'
+                   textShadow: '0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.5)'
                  }}>50+</div>
-            <div className="text-sm font-light opacity-90 drop-shadow-md"
+            <div className="text-sm font-medium opacity-95 drop-shadow-md leading-tight"
                  style={{
-                   textShadow: '0 0 10px rgba(255,255,255,0.6)'
+                   textShadow: '0 0 10px rgba(255,255,255,0.7)'
                  }}>Premium Products</div>
-          </div>
-          <div className="text-center bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-            <div className="text-3xl font-bold mb-2 drop-shadow-lg"
+          </motion.div>
+
+          <motion.div
+            className="text-center bg-black/30 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl min-h-[140px] flex flex-col justify-center"
+            whileHover={{ scale: 1.05, y: -5 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="text-4xl font-bold mb-3 drop-shadow-lg"
                  style={{
-                   textShadow: '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)'
+                   textShadow: '0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.5)'
                  }}>5★</div>
-            <div className="text-sm font-light opacity-90 drop-shadow-md"
+            <div className="text-sm font-medium opacity-95 drop-shadow-md leading-tight"
                  style={{
-                   textShadow: '0 0 10px rgba(255,255,255,0.6)'
+                   textShadow: '0 0 10px rgba(255,255,255,0.7)'
                  }}>Average Rating</div>
-          </div>
+          </motion.div>
         </motion.div>
         </div>
       </div>
