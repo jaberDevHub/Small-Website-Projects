@@ -164,104 +164,81 @@ const Products = () => {
             {product.name}
           </motion.h2>
 
-          {/* Micro-Stories - Varied alignments and motions */}
-          <div className={`relative z-10 text-white ${product.contentAlign} max-w-4xl px-6`}>
-            {/* Material */}
-            <motion.div
-              className="mb-12"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Material</div>
-              <div className="text-5xl font-thin leading-tight">{product.material}</div>
-            </motion.div>
+          {/* Micro-Stories - Positioned absolutely for clean layout */}
+          <div className="absolute inset-0 z-10 flex items-center justify-center">
+            <div className="max-w-6xl w-full px-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                {/* Left side - Material, Craft */}
+                <div className="space-y-16">
+                  <motion.div
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.8 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Material</div>
+                    <div className="text-5xl font-thin leading-tight">{product.material}</div>
+                  </motion.div>
 
-            {/* Craft */}
-            <motion.div
-              className="mb-12"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Craft</div>
-              <div className="text-5xl font-thin leading-tight">{product.craft}</div>
-            </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 1.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Craft</div>
+                    <div className="text-5xl font-thin leading-tight">{product.craft}</div>
+                  </motion.div>
+                </div>
 
-            {/* Benefit */}
-            <motion.div
-              className="mb-12"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 1.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Benefit</div>
-              <div className="text-5xl font-thin leading-tight">{product.benefit}</div>
-            </motion.div>
+                {/* Right side - Benefit, Usage */}
+                <div className="space-y-16">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 1.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Benefit</div>
+                    <div className="text-5xl font-thin leading-tight">{product.benefit}</div>
+                  </motion.div>
 
-            {/* Usage */}
-            <motion.div
-              className="mb-16"
-              initial={{ opacity: 0, y: -60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 2.0 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Usage</div>
-              <div className="text-5xl font-thin leading-tight">{product.usage}</div>
-            </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: -60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 2.0 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Usage</div>
+                    <div className="text-5xl font-thin leading-tight">{product.usage}</div>
+                  </motion.div>
+                </div>
+              </div>
 
-            {/* Price - Varied alignment */}
-            <motion.div
-              className={`mb-12 ${product.priceAlign}`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 2.4 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-7xl font-thin text-white/90">{product.price}</div>
-            </motion.div>
-
-            {/* Social Proof */}
-            <motion.div
-              className={`mb-8 ${product.contentAlign} text-lg opacity-60`}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2.6 }}
-              viewport={{ once: true }}
-            >
-              Loved by thousands
-            </motion.div>
-
-            {/* Button with Micro-copy - Varied alignment */}
-            <motion.div
-              className={`mb-8 flex ${product.buttonAlign}`}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 2.8 }}
-              viewport={{ once: true }}
-            >
-              <motion.button
-                className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 text-lg font-light rounded-full hover:bg-white/20 transition-all duration-500 shadow-lg"
-                whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(255,255,255,0.1)" }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => handleAddToCart(product.id)}
+              {/* Bottom section - Price, Social Proof, Button */}
+              <motion.div
+                className="mt-20 text-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 2.4 }}
+                viewport={{ once: true }}
               >
-                {addedItems.has(product.id) ? 'Added' : 'Add to Collection'}
-              </motion.button>
-            </motion.div>
-            <motion.div
-              className={`${product.contentAlign} text-sm opacity-50 mt-4`}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 3.0 }}
-              viewport={{ once: true }}
-            >
-              Free returns · 2-year warranty · Secure checkout
-            </motion.div>
+                <div className="text-7xl font-thin text-white/90 mb-8">{product.price}</div>
+
+                <div className="text-lg opacity-60 mb-8">Loved by thousands</div>
+
+                <motion.button
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 text-lg font-light rounded-full hover:bg-white/20 transition-all duration-500 shadow-lg mb-4"
+                  whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(255,255,255,0.1)" }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleAddToCart(product.id)}
+                >
+                  {addedItems.has(product.id) ? 'Added' : 'Add to Collection'}
+                </motion.button>
+
+                <div className="text-sm opacity-50">Free returns · 2-year warranty · Secure checkout</div>
+              </motion.div>
+            </div>
           </div>
         </section>
       ))}
