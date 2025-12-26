@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 
-const Hero = () => {
+const Hero = ({ width = 1920, height = 1200 }) => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
+    <section className="relative mx-auto flex items-center justify-center overflow-hidden bg-black pt-20" style={{ height: `${height}px`, maxWidth: `${width}px` }}>
       {/* Background Image/Video Placeholder */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-95"></div>
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1441986300917-64674bd600d8')] bg-cover bg-center opacity-20"></div>
 
-      <div className="relative z-10 container mx-auto px-6 text-center text-white max-w-5xl">
+      <div className="relative z-10 container mx-auto px-6 text-center text-white" style={{ maxWidth: `${width}px` }}>
         {/* Semi-transparent background for better text readability */}
         <div className="absolute inset-0 bg-black/30 backdrop-blur-sm rounded-3xl -mx-6"></div>
         <div className="relative z-10 p-8 md:p-12">
