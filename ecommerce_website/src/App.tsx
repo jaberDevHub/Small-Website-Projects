@@ -10,9 +10,8 @@ export default function App() {
     <div className="App">
       <Navbar />
       <section id="home"><Hero /></section>
-      <section id="about"><BrandStory /></section>
       <section id="collection"><Products /></section>
-      <section id="cart"><Cart /></section>
+      <section id="about"><BrandStory /></section>
       <section id="contact"><Footer /></section>
     </div>
   );
