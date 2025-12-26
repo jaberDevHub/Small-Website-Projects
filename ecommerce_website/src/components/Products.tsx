@@ -22,7 +22,11 @@ const Products = () => {
       nameAlign: 'text-left',
       contentAlign: 'text-left',
       priceAlign: 'text-right',
-      buttonAlign: 'justify-start'
+      buttonAlign: 'justify-start',
+      materialColor: 'text-blue-200',
+      craftColor: 'text-green-200',
+      benefitColor: 'text-purple-200',
+      usageColor: 'text-yellow-200'
     },
     {
       id: 2,
@@ -37,7 +41,11 @@ const Products = () => {
       nameAlign: 'text-right',
       contentAlign: 'text-right',
       priceAlign: 'text-left',
-      buttonAlign: 'justify-end'
+      buttonAlign: 'justify-end',
+      materialColor: 'text-amber-200',
+      craftColor: 'text-orange-200',
+      benefitColor: 'text-yellow-200',
+      usageColor: 'text-red-200'
     },
     {
       id: 3,
@@ -52,7 +60,11 @@ const Products = () => {
       nameAlign: 'text-center',
       contentAlign: 'text-center',
       priceAlign: 'text-center',
-      buttonAlign: 'justify-center'
+      buttonAlign: 'justify-center',
+      materialColor: 'text-cyan-200',
+      craftColor: 'text-blue-200',
+      benefitColor: 'text-indigo-200',
+      usageColor: 'text-purple-200'
     },
     {
       id: 4,
@@ -67,7 +79,11 @@ const Products = () => {
       nameAlign: 'text-left',
       contentAlign: 'text-left',
       priceAlign: 'text-right',
-      buttonAlign: 'justify-start'
+      buttonAlign: 'justify-start',
+      materialColor: 'text-slate-200',
+      craftColor: 'text-gray-200',
+      benefitColor: 'text-zinc-200',
+      usageColor: 'text-neutral-200'
     },
     {
       id: 5,
@@ -82,7 +98,11 @@ const Products = () => {
       nameAlign: 'text-right',
       contentAlign: 'text-right',
       priceAlign: 'text-left',
-      buttonAlign: 'justify-end'
+      buttonAlign: 'justify-end',
+      materialColor: 'text-emerald-200',
+      craftColor: 'text-green-200',
+      benefitColor: 'text-lime-200',
+      usageColor: 'text-teal-200'
     },
     {
       id: 6,
@@ -97,7 +117,11 @@ const Products = () => {
       nameAlign: 'text-center',
       contentAlign: 'text-center',
       priceAlign: 'text-center',
-      buttonAlign: 'justify-center'
+      buttonAlign: 'justify-center',
+      materialColor: 'text-violet-200',
+      craftColor: 'text-purple-200',
+      benefitColor: 'text-fuchsia-200',
+      usageColor: 'text-pink-200'
     },
     {
       id: 7,
@@ -112,7 +136,11 @@ const Products = () => {
       nameAlign: 'text-left',
       contentAlign: 'text-left',
       priceAlign: 'text-right',
-      buttonAlign: 'justify-start'
+      buttonAlign: 'justify-start',
+      materialColor: 'text-rose-200',
+      craftColor: 'text-red-200',
+      benefitColor: 'text-orange-200',
+      usageColor: 'text-amber-200'
     },
     {
       id: 8,
@@ -127,7 +155,11 @@ const Products = () => {
       nameAlign: 'text-right',
       contentAlign: 'text-right',
       priceAlign: 'text-left',
-      buttonAlign: 'justify-end'
+      buttonAlign: 'justify-end',
+      materialColor: 'text-sky-200',
+      craftColor: 'text-indigo-200',
+      benefitColor: 'text-blue-200',
+      usageColor: 'text-cyan-200'
     }
   ];
 
@@ -177,7 +209,7 @@ const Products = () => {
                     viewport={{ once: true }}
                   >
                     <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Material</div>
-                    <div className="text-5xl font-thin leading-tight">{product.material}</div>
+                    <div className={`text-5xl font-thin leading-tight ${product.materialColor || 'text-white'}`}>{product.material}</div>
                   </motion.div>
 
                   <motion.div
@@ -187,7 +219,7 @@ const Products = () => {
                     viewport={{ once: true }}
                   >
                     <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Craft</div>
-                    <div className="text-5xl font-thin leading-tight">{product.craft}</div>
+                    <div className={`text-5xl font-thin leading-tight ${product.craftColor || 'text-white'}`}>{product.craft}</div>
                   </motion.div>
                 </div>
 
@@ -200,7 +232,7 @@ const Products = () => {
                     viewport={{ once: true }}
                   >
                     <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Benefit</div>
-                    <div className="text-5xl font-thin leading-tight">{product.benefit}</div>
+                    <div className={`text-5xl font-thin leading-tight ${product.benefitColor || 'text-white'}`}>{product.benefit}</div>
                   </motion.div>
 
                   <motion.div
@@ -210,7 +242,7 @@ const Products = () => {
                     viewport={{ once: true }}
                   >
                     <div className="text-lg font-light mb-4 opacity-70 tracking-wider">Usage</div>
-                    <div className="text-5xl font-thin leading-tight">{product.usage}</div>
+                    <div className={`text-5xl font-thin leading-tight ${product.usageColor || 'text-white'}`}>{product.usage}</div>
                   </motion.div>
                 </div>
               </div>
