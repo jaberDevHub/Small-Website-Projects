@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
-const Products = () => {
-  const [addedItems, setAddedItems] = useState<Set<number>>(new Set());
-
-  const handleAddToCart = (id: number) => {
-    setAddedItems(prev => new Set(prev).add(id));
-  };
+const Products = ({ addToCart }) => {
 
   const products = [
     {
@@ -263,9 +257,9 @@ const Products = () => {
                   className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 text-lg font-light rounded-full hover:bg-white/20 transition-all duration-500 shadow-lg mb-4"
                   whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(255,255,255,0.1)" }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => handleAddToCart(product.id)}
+                  onClick={() => addToCart(product)}
                 >
-                  {addedItems.has(product.id) ? 'Added' : 'Add to Collection'}
+                  Add to Collection
                 </motion.button>
 
                 <div className="text-sm opacity-50">Free returns · 2-year warranty · Secure checkout</div>
